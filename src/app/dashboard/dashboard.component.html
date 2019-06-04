@@ -1,0 +1,130 @@
+<!-- navbar -->
+
+<div id="navbar">
+  <div id="notification" class="container">
+    <div id="info" class="alert alert-info fade show" *ngIf="hide">
+      <button type="button" class="close" (click)="toggle()">&times;</button>
+      <strong><i class="fa fa-exclamation-circle"></i>Info!</strong>
+      <span id="infoDate">{{date | date:'HH:mm:ss'}}</span>
+      <hr>
+      <i>Neutral information.</i>
+    </div>
+    <div id="warning" class="alert alert-warning fade show" *ngIf="hide">
+      <button type="button" class="close" (click)="toggle()">&times;</button>
+      <strong><i class="fa fa-bullhorn"></i>Warning!</strong>
+      <span id="warnDate">{{date | date:'HH:mm:ss'}}</span>
+      <hr>
+      <i>Might need attention.</i>
+    </div>
+    <div id="danger" class="alert alert-danger fade show" *ngIf="hide">
+      <button type="button" class="close" (click)="toggle()">&times;</button>
+      <strong><i class="fa fa-bolt"></i>Danger!</strong>
+      <span id="dangerDate">{{date | date:'HH:mm:ss'}}</span>
+      <hr>
+      <i>Dangerous action.</i>
+    </div>
+  </div>
+
+  <a href="/login">Logout</a>
+  <a href="/configuration" data-toggle="modal" data-target="#myModal">Configuration</a>
+</div>
+
+
+<!-- Configuration/modal window -->
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Configuration</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <ul>
+          <li>Tests</li>
+          <li>Devices</li>
+          <li>Builds</li>
+          <li>Services</li>
+          <li>Projects</li>
+        </ul>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- left sticky menu -->
+
+<div class="nav-side-menu">
+  <div class="brand">Brand</div>
+  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  <div class="menu-list">
+
+    <ul id="menu-content" class="menu-content collapse out">
+
+      <li>
+        <i class="fa fa-dashboard fa-lg"></i> Dashboard
+      </li>
+
+      <li data-toggle="collapse" data-target="#statistics" class="collapsed">
+        <i class="fa fa-area-chart fa-lg"></i> Statistics <span class="arrow"></span>
+      </li>
+
+      <ul class="sub-menu collapse" id="statistics">
+        <li>Tests</li>
+        <li>Devices</li>
+        <li>Builds</li>
+        <li>Services</li>
+        <li>Projects</li>
+      </ul>
+
+      <li data-toggle="collapse" data-target="#reports" class="collapsed">
+        <i class="fa fa-file-text fa-lg"></i> Reports <span class="arrow"></span>
+      </li>
+
+      <ul class="sub-menu collapse" id="reports">
+        <li>Tests</li>
+        <li>Devices</li>
+        <li>Builds</li>
+        <li>Services</li>
+        <li>Projects</li>
+      </ul>
+
+      <li>
+        <i class="fa fa-wrench fa-lg"></i> Configurations
+      </li>
+
+      <li data-toggle="collapse" data-target="#overview" class="collapsed">
+        <i class="fa fa-book fa-lg"></i> Overview <span class="arrow"></span>
+      </li>
+
+      <ul class="sub-menu collapse" id="overview">
+        <li>Tests</li>
+        <li>Devices</li>
+        <li>Builds</li>
+        <li>Services</li>
+        <li>Projects</li>
+      </ul>
+
+    </ul>
+  </div>
+</div>
+
+
+<!-- draggable window -->
+
+<div class="example-boundary">
+    <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+      I can only be dragged within the dotted container
+    </div>
+  </div>
