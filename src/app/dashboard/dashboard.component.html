@@ -43,14 +43,36 @@
       </div>
 
       <!-- Modal body -->
-      <div class="modal-body">
-        <ul>
-          <li>Tests</li>
-          <li>Devices</li>
-          <li>Builds</li>
-          <li>Services</li>
-          <li>Projects</li>
-        </ul>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" href="#profile" role="tab" data-toggle="tab">Language selection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Notification types select</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#references" role="tab" data-toggle="tab">Email input</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="profile">
+          <form>
+            <div class="form-group">
+              <label for="sel1">Select list (select one):</label>
+              <select class="form-control" id="sel1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+          </form>
+          <button class="btn btn-success">Save</button>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="buzz">bbqefwefewfwefwefb</div>
+        <div role="tabpanel" class="tab-pane fade" id="references">ccfqwewfwfwefewfefqwfc</div>
       </div>
 
       <!-- Modal footer -->
@@ -179,4 +201,3 @@
   </div>
 
 </div>
-
