@@ -58,17 +58,14 @@
       <!-- Tab panes -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="profile">
-          <form>
             <div class="form-group">
               <label for="sel1">Select list (select one):</label>
-              <select class="form-control" id="sel1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
+              <select class="form-control" id="sel1" [(ngModel)]="langSelected">
+               <option *ngFor="let lang of Languages" [value]="lang.code">
+                 {{lang.name}}
+               </option>
               </select>
             </div>
-          </form>
           <button class="btn btn-success">Save</button>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="buzz">bbqefwefewfwefwefb</div>
