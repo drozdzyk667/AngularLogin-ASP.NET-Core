@@ -62,14 +62,20 @@
               <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="sel1" [(ngModel)]="langSelected">
                <option *ngFor="let lang of Languages" [value]="lang.code">
+                 <!-- <i *ngIf="lang.nativeName == this.compare" > -->
                  {{lang.name}}
+                 <!-- </i> -->
                </option>
               </select>
             </div>
           <button class="btn btn-success">Save</button>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="buzz">bbqefwefewfwefwefb</div>
-        <div role="tabpanel" class="tab-pane fade" id="references">ccfqwewfwfwefewfefqwfc</div>
+        <div role="tabpanel" class="tab-pane fade" id="buzz">
+            <button class="btn btn-warning">Save</button>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="references">
+            <button class="btn btn-primary">Save</button>
+        </div>
       </div>
 
       <!-- Modal footer -->

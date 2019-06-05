@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   langSelected: string = 'en';
   public hide = true;
   date: Date;
+  compare: string;
 
   constructor() {
 
@@ -206,6 +207,21 @@ export class DashboardComponent implements OnInit {
       { "code": "yo", "name": "Yoruba", "nativeName": "Yorùbá" },
       { "code": "za", "name": "Zhuang, Chuang", "nativeName": "Saɯ cueŋƅ, Saw cuengh" }
     ];
+
+
+    for (let k = 0; k < this.Languages.length; k++){
+      let native = this.Languages[k].nativeName;
+      let patt1 = /[^A-Za-z]/;
+      let compare = native.match(patt1);
+      if(compare){
+        console.log(native, k);
+        // console.log(native==compare, k)
+      }
+
+    }
+    // let str = this.Languages[0].name;
+    // console.log(str);
+    //
 
 
     const coll = document.getElementsByClassName('collapsible');
