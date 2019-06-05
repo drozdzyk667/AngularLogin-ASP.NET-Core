@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   arr = [];
   arr2 = [];
   nrSelect = 'English';
+  toggleBool: boolean=true;
 
   constructor() {
 
@@ -235,7 +236,6 @@ export class DashboardComponent implements OnInit {
       });
     }
 
-
     // random alerts display
     setInterval(() => {
       switch (Math.floor(Math.random() * 3)) {
@@ -271,6 +271,15 @@ export class DashboardComponent implements OnInit {
       this.date = new Date();
     }
   }
+
+  changeEvent(event) {
+    if (event.target.checked) {
+        this.toggleBool = false;
+    }
+    else {
+        this.toggleBool = true;
+    }
+}
 
 }
 
