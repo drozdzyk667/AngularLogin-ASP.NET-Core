@@ -18,6 +18,9 @@ export class DashboardComponent implements OnInit {
   arr2 = [];
   nrSelect = 'English';
   toggleBool: boolean=true;
+  isItemClicked1 = false;
+  isItemClicked2 = false;
+  isItemClicked3 = false;
 
   constructor() {
 
@@ -272,13 +275,23 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  changeEvent(event) {
-    if (event.target.checked) {
-        this.toggleBool = false;
-    }
-    else {
-        this.toggleBool = true;
-    }
+//   changeEvent(event) {
+//     if (event.target.checked) {
+//         this.toggleBool = false;
+//     }
+//     else {
+//         this.toggleBool = true;
+//     }
+// }
+
+clickItem1(){
+  this.isItemClicked1 = !this.isItemClicked1;
+}
+clickItem2(){
+  this.isItemClicked2 = !this.isItemClicked2;
+}
+clickItem3(){
+  this.isItemClicked3 = !this.isItemClicked3;
 }
 
 }
