@@ -61,10 +61,11 @@
             <div class="form-group">
               <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="sel1" [(ngModel)]="langSelected">
-               <option *ngFor="let lang of Languages" [value]="lang.code">
-                 <!-- <i *ngIf="lang.nativeName == this.compare" > -->
-                 {{lang.name}}
-                 <!-- </i> -->
+              <option *ngFor="let langActive of arr2" [value]="langActive.code" style="font-weight: 500; ">
+                {{langActive}}
+              </option>
+               <option *ngFor="let langNotActive of arr" [disabled]=true [value]="langNotActive.code" style="font-size:14px">
+                 {{langNotActive}}
                </option>
               </select>
             </div>
