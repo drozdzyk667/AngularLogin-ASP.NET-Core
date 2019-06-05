@@ -12,11 +12,11 @@ import { Languages } from './languges';
 export class DashboardComponent implements OnInit {
 
   Languages: Languages[];
-  langSelected: string = 'English';
   public hide = true;
   date: Date;
   arr = [];
   arr2 = [];
+  nrSelect = 'English';
 
   constructor() {
 

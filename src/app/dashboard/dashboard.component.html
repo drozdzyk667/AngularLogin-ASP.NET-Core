@@ -60,11 +60,11 @@
         <div role="tabpanel" class="tab-pane fade in active" id="profile">
             <div class="form-group">
               <label for="sel1">Select list (select one):</label>
-              <select class="form-control" id="sel1" [(ngModel)]="langSelected">
-              <option *ngFor="let langActive of arr2" [value]="langActive.code" style="font-weight: 500; ">
+              <select class="form-control" id="sel1" [(ngModel)]='nrSelect'>
+              <option *ngFor="let langActive of arr2"  style="font-weight: 500;">
                 {{langActive}}
               </option>
-               <option *ngFor="let langNotActive of arr" [disabled]=true [value]="langNotActive.code" style="font-size:14px">
+               <option *ngFor="let langNotActive of arr" [disabled]=true style="font-size:14px;">
                  {{langNotActive}}
                </option>
               </select>
