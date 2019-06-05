@@ -1,0 +1,179 @@
+<!-- navbar -->
+
+<div id="navbar">
+  <div id="notification" class="container">
+    <div id="info" class="alert alert-info fade show" *ngIf="hide">
+      <button type="button" class="close" (click)="toggle()">&times;</button>
+      <strong><i class="fa fa-exclamation-circle"></i>Info!</strong>
+      <span id="infoDate">{{date | date:'HH:mm:ss'}}</span>
+      <hr>
+      <i>Neutral information.</i>
+    </div>
+    <div id="warning" class="alert alert-warning fade show" *ngIf="hide">
+      <button type="button" class="close" (click)="toggle()">&times;</button>
+      <strong><i class="fa fa-bullhorn"></i>Warning!</strong>
+      <span id="warnDate">{{date | date:'HH:mm:ss'}}</span>
+      <hr>
+      <i>Might need attention.</i>
+    </div>
+    <div id="danger" class="alert alert-danger fade show" *ngIf="hide">
+      <button type="button" class="close" (click)="toggle()">&times;</button>
+      <strong><i class="fa fa-bolt"></i>Danger!</strong>
+      <span id="dangerDate">{{date | date:'HH:mm:ss'}}</span>
+      <hr>
+      <i>Dangerous action.</i>
+    </div>
+  </div>
+
+  <a href="/login">Logout</a>
+  <a href="/configuration" data-toggle="modal" data-target="#myModal">Configuration</a>
+</div>
+
+
+<!-- Configuration/modal window -->
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Configuration</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <ul>
+          <li>Tests</li>
+          <li>Devices</li>
+          <li>Builds</li>
+          <li>Services</li>
+          <li>Projects</li>
+        </ul>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- left sticky menu -->
+
+<div class="nav-side-menu">
+  <div class="brand">Brand</div>
+  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  <div class="menu-list">
+
+    <ul id="menu-content" class="menu-content collapse out">
+
+      <li>
+        <i class="fa fa-dashboard fa-lg"></i> Dashboard
+      </li>
+
+      <li data-toggle="collapse" data-target="#statistics" class="collapsed">
+        <i class="fa fa-area-chart fa-lg"></i> Statistics <span class="arrow"></span>
+      </li>
+
+      <ul class="sub-menu collapse" id="statistics">
+        <li>Tests</li>
+        <li>Devices</li>
+        <li>Builds</li>
+        <li>Services</li>
+        <li>Projects</li>
+      </ul>
+
+      <li data-toggle="collapse" data-target="#reports" class="collapsed">
+        <i class="fa fa-file-text fa-lg"></i> Reports <span class="arrow"></span>
+      </li>
+
+      <ul class="sub-menu collapse" id="reports">
+        <li>Tests</li>
+        <li>Devices</li>
+        <li>Builds</li>
+        <li>Services</li>
+        <li>Projects</li>
+      </ul>
+
+      <li>
+        <i class="fa fa-wrench fa-lg"></i> Configurations
+      </li>
+
+      <li data-toggle="collapse" data-target="#overview" class="collapsed">
+        <i class="fa fa-book fa-lg"></i> Overview <span class="arrow"></span>
+      </li>
+
+      <ul class="sub-menu collapse" id="overview">
+        <li>Tests</li>
+        <li>Devices</li>
+        <li>Builds</li>
+        <li>Services</li>
+        <li>Projects</li>
+      </ul>
+
+    </ul>
+  </div>
+</div>
+
+<div id="card" class="card" cdkDragBoundary=".example-boundary" cdkDrag>
+  <div class="card-header" id="heading1">
+    <h4>Data window</h4>
+    <a data-toggle="collapse" href="#collapse1" class="collapsible"></a>
+  </div>
+
+  <div id="collapse1" class="card-body collapse show">
+    <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+      3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+      Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+      Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+      Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+      synth nesciunt you probably haven't heard of them accusamus labore sustainable. </p>
+
+    <div class="table-responsive" style="margin: 30px 0px 40px 40px; width: 90%;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Matt</td>
+            <td>Pitt</td>
+            <td>25</td>
+            <td>Chicago</td>
+            <td>USA</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>John</td>
+            <td>Henry</td>
+            <td>16</td>
+            <td>Boston</td>
+            <td>USA</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Susan</td>
+            <td>Doe</td>
+            <td>44</td>
+            <td>Washington</td>
+            <td>USA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

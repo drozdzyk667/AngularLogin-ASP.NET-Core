@@ -16,9 +16,8 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, '../coverage/AngularDashboard'),
-      reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true
+      dir: require('path').join(__dirname, '../coverage/AngularDotNet'),
+      reports: ['html', 'lcovonly', 'text-summary']
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
