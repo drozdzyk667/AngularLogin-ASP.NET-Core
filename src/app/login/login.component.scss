@@ -1,5 +1,11 @@
+$desktop: 767px;
 
-/* BASIC */
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
 
 html {
   background-color: #56baed;
@@ -41,6 +47,24 @@ h2 {
   width: 100%;
   min-height: 100%;
   padding: 20px;
+}
+
+.loader {
+  position:absolute;
+  width: 200px; 
+  height: 49px; 
+  top: 52%; 
+  left: 17%;
+  visibility: hidden;
+
+  @include desktop {
+    position:absolute;
+    width: 200px; 
+    height: 49px; 
+    top: 52%; 
+    left: 28%;
+    visibility: hidden;
+  }
 }
 
 #formContent {
