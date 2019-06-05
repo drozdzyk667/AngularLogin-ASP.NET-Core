@@ -43,14 +43,39 @@
       </div>
 
       <!-- Modal body -->
-      <div class="modal-body">
-        <ul>
-          <li>Tests</li>
-          <li>Devices</li>
-          <li>Builds</li>
-          <li>Services</li>
-          <li>Projects</li>
-        </ul>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" href="#profile" role="tab" data-toggle="tab">Language selection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Notification types select</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#references" role="tab" data-toggle="tab">Email input</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="profile">
+            <div class="form-group">
+              <label for="sel1">Select list (select one):</label>
+              <select class="form-control" id="sel1" [(ngModel)]="langSelected">
+               <option *ngFor="let lang of Languages" [value]="lang.code">
+                 <!-- <i *ngIf="lang.nativeName == this.compare" > -->
+                 {{lang.name}}
+                 <!-- </i> -->
+               </option>
+              </select>
+            </div>
+          <button class="btn btn-success">Save</button>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="buzz">
+            <button class="btn btn-warning">Save</button>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="references">
+            <button class="btn btn-primary">Save</button>
+        </div>
       </div>
 
       <!-- Modal footer -->
@@ -120,11 +145,64 @@
   </div>
 </div>
 
-
-<!-- draggable window -->
-
 <div class="example-boundary">
-    <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-      I can only be dragged within the dotted container
+  <div id="card" class="card" cdkDragBoundary=".example-boundary" cdkDrag>
+    <div class="card-header" id="heading1">
+      <h4>Data window</h4>
+      <a data-toggle="collapse" href="#collapse1" class="collapsible"></a>
     </div>
+
+    <div id="collapse1" class="card-body collapse show">
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Vestibulum lorem quam, scelerisque sit amet feugiat at, tristique eget elit.
+        Fusce sagittis urna nec sodales consequat.
+        Pellentesque diam dolor, iaculis feugiat lobortis commodo, pulvinar quis mauris.
+        Sed magna nunc, eleifend vel luctus ut, bibendum sit amet massa.
+        Suspendisse a mauris facilisis, scelerisque massa nec, luctus risus.
+        Duis enim elit, porta a facilisis vehicula, malesuada in ante.
+        Nulla rutrum vel felis quis consequat. </p>
+
+      <div class="table-responsive" style="margin: 30px 0px 40px 40px; width: 90%;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Age</th>
+              <th>City</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Matt</td>
+              <td>Pitt</td>
+              <td>25</td>
+              <td>Chicago</td>
+              <td>USA</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>John</td>
+              <td>Henry</td>
+              <td>16</td>
+              <td>Boston</td>
+              <td>USA</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Susan</td>
+              <td>Doe</td>
+              <td>44</td>
+              <td>Washington</td>
+              <td>USA</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
+</div>
