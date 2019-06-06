@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Languages } from './languges';
+
 
 
 @Component({
@@ -11,7 +11,7 @@ import { Languages } from './languges';
 
 export class DashboardComponent implements OnInit {
 
-  Languages: Languages[];
+  Languages = [];
   public hide = true;
   date: Date;
   arr = [];
@@ -252,7 +252,7 @@ export class DashboardComponent implements OnInit {
           (document.getElementById("saveEmail") as HTMLInputElement).disabled = true;
           (document.querySelector('#emailMsg') as HTMLElement).style.visibility = 'visible';
         }
-        if(field.value == ''){
+        if (field.value == '') {
           field.removeAttribute("aria-invalid");
           (document.getElementById("saveEmail") as HTMLInputElement).disabled = false;
           (document.querySelector('#emailMsg') as HTMLElement).style.visibility = 'hidden';
@@ -339,6 +339,12 @@ export class DashboardComponent implements OnInit {
   }
   clickItem3() {
     this.isItemClicked3 = !this.isItemClicked3;
+  }
+
+  getValue = (event) => {
+    let x = document.querySelector('#menu-content');
+
+    console.log((document.querySelector('#menu-content') as HTMLInputElement).innerText);
   }
 
 }

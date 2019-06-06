@@ -103,8 +103,8 @@
               <input class="form-control" name="email" id="email" value="" required="required" aria-required="true"
                 pattern="^(([-\w\d]+)(\.[-\w\d]+)*@([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2})$"
                 title="Your email address" type="email" spellcheck="false" size="30" />
-                <br>
-                <i id="emailMsg" style="color:red; visibility: hidden;">* Wrong email !</i>
+              <br>
+              <i id="emailMsg" style="color:red; visibility: hidden;">* Wrong email !</i>
             </p>
           </form>
           <button class="btn btn-primary" id="saveEmail">Save</button>
@@ -128,12 +128,9 @@
   <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   <div class="menu-list">
 
-    <ul id="menu-content" class="menu-content collapse out">
+    <ul id="menu-content" class="menu-content collapse out"  (click)="getValue($event)">
 
-      <li>
-        <i class="fa fa-dashboard fa-lg"></i> Dashboard
-      </li>
-
+      <li><i class="fa fa-dashboard fa-lg"></i> Dashboard </li>
       <li data-toggle="collapse" data-target="#statistics" class="collapsed">
         <i class="fa fa-area-chart fa-lg"></i> Statistics <span class="arrow"></span>
       </li>
@@ -178,6 +175,9 @@
   </div>
 </div>
 
+
+<!-- main content -->
+<p id="txt" style="position: absolute; left: 50%;">rfreferferfref </p>
 <div class="example-boundary">
   <div id="card" class="card" cdkDragBoundary=".example-boundary" cdkDrag>
     <div class="card-header" id="heading1">

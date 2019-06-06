@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
             // (document.querySelector('.alert') as HTMLElement).style.visibility = 'visible';
             setTimeout(() => {
               (document.querySelector('.alert') as HTMLElement).classList.remove('alertError');
-            // (document.querySelector('.alert') as HTMLElement).style.visibility = 'hidden';
+              // (document.querySelector('.alert') as HTMLElement).style.visibility = 'hidden';
             }, 6000);
           }
           if (data == '200') {
