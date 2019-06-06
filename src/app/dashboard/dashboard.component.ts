@@ -292,27 +292,34 @@ export class DashboardComponent implements OnInit {
 
     // random alerts display
     setInterval(() => {
+      let switch1 = (<HTMLInputElement>document.getElementById('switch1')).checked;
+      let switch2 = (<HTMLInputElement>document.getElementById('switch2')).checked;
+      let switch3 = (<HTMLInputElement>document.getElementById('switch3')).checked;
       switch (Math.floor(Math.random() * 3)) {
         case 0:
-          (document.querySelector('#info') as HTMLElement).style.display = 'block';
-          (document.querySelector('#warning') as HTMLElement).style.display = 'none';
-          (document.querySelector('#danger') as HTMLElement).style.display = 'none';
-          this.date = new Date();
-          break;
-
+          if (switch1 == true) {
+            (document.querySelector('#info') as HTMLElement).style.display = 'block';
+            (document.querySelector('#warning') as HTMLElement).style.display = 'none';
+            (document.querySelector('#danger') as HTMLElement).style.display = 'none';
+            this.date = new Date();
+            break;
+          }
         case 1:
-          (document.querySelector('#info') as HTMLElement).style.display = 'none';
-          (document.querySelector('#warning') as HTMLElement).style.display = 'block';
-          (document.querySelector('#danger') as HTMLElement).style.display = 'none';
-          this.date = new Date();
-          break;
-
+          if (switch2 == true) {
+            (document.querySelector('#info') as HTMLElement).style.display = 'none';
+            (document.querySelector('#warning') as HTMLElement).style.display = 'block';
+            (document.querySelector('#danger') as HTMLElement).style.display = 'none';
+            this.date = new Date();
+            break;
+          }
         case 2:
-          (document.querySelector('#info') as HTMLElement).style.display = 'none';
-          (document.querySelector('#warning') as HTMLElement).style.display = 'none';
-          (document.querySelector('#danger') as HTMLElement).style.display = 'block';
-          this.date = new Date();
-          break;
+          if (switch3 == true) {
+            (document.querySelector('#info') as HTMLElement).style.display = 'none';
+            (document.querySelector('#warning') as HTMLElement).style.display = 'none';
+            (document.querySelector('#danger') as HTMLElement).style.display = 'block';
+            this.date = new Date();
+            break;
+          }
       }
     }, Math.floor(Math.random() * 10000) + 5000);       // random time 5-10s
 

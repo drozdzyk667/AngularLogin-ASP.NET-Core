@@ -81,15 +81,15 @@
           </label>
           <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="switch1" name="example" (change)="clickItem1();">
-            <label class="custom-control-label" for="switch1">Warning alert</label>
+            <label class="custom-control-label" for="switch1">Info alert</label>
           </div>
           <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="switch2" name="example" (change)="clickItem2();">
-            <label class="custom-control-label" for="switch2">Danger alert</label>
+            <label class="custom-control-label" for="switch2">Warning alert</label>
           </div>
           <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="switch3" name="example" (change)="clickItem3();">
-            <label class="custom-control-label" for="switch3">Info alert</label>
+            <label class="custom-control-label" for="switch3">Danger alert</label>
           </div>
           <button class="btn btn-warning"
             [disabled]="!isItemClicked1 && !isItemClicked2 && !isItemClicked3">Save</button>
