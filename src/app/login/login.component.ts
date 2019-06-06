@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   postProfile() {
     (document.querySelector('.fourth') as HTMLElement).style.visibility = 'hidden';
-    setTimeout(() => {  
+    setTimeout(() => {
       (document.querySelector('.loader') as HTMLElement).style.visibility = 'visible';
     }, 300);
     console.log(this.input)
@@ -40,11 +40,10 @@ export class LoginComponent implements OnInit {
           if (data == '200') {
             this.router.navigateByUrl('/dashboard');
           }
-          setTimeout(() => {      
+          setTimeout(() => {
             (document.querySelector('.loader') as HTMLElement).style.visibility = 'hidden';
             (document.querySelector('.fourth') as HTMLElement).style.visibility = 'visible';
             // (<HTMLInputElement> document.querySelector('.fourth')).disabled = true;
-            
             this.input.login = '';
             this.input.password = '';
           }, 500);
