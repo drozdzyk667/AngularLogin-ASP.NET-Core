@@ -342,8 +342,8 @@ export class DashboardComponent implements OnInit {
 
   // display on <p> tag (main content) selected item from left menu
   onItemClick(category: string, index: number) {
-    console.log(`${category} -> ${this.listItems[index]}`);
-    (document.getElementById('txt') as HTMLElement).innerHTML = `${category} -> ${this.listItems[index]}`;
+    console.log(`${category} - ${this.listItems[index]}`);
+    (document.getElementById('txt') as HTMLElement).innerHTML = `${category} - ${this.listItems[index]}`;
   }
 
   onItemClickMain(category: string) {
