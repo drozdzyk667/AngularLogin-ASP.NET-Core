@@ -346,7 +346,7 @@ export class DashboardComponent implements OnInit {
 
     console.log((document.querySelector('#menu-content') as HTMLInputElement).innerText);
   }
-
+// https://stackoverflow.com/questions/56477136/get-text-value-from-ul-li-elements-after-click
 }
 
 
