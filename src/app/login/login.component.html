@@ -2,18 +2,19 @@
 <h2>Sign In</h2>
 <form id="formContent" #form="ngForm" novalidate>
   <div>
-      <input class="fadeIn second" placeholder="Login" #login="ngModel" name="login" [(ngModel)]="input.login" type="text" #username required id="username"/>
+      <input class="fadeIn second" placeholder="Login" #login="ngModel" name="login" [(ngModel)]="input.login" type="text" #username required id="username" value=''/>
       <div *ngIf="login.errors  && (login.dirty || login.touched)">
         <p class="warning" *ngIf="login?.errors.required">* Login field is required</p>
       </div>
     </div>
     <div >
-      <input class="fadeIn third" placeholder="Password" #password="ngModel" name=password [(ngModel)]="input.password" type="password" #passwordd required id="password" />
+      <input class="fadeIn third" placeholder="Password" #password="ngModel" name=password [(ngModel)]="input.password" type="password" #passwordd required id="password" value='' />
       <div *ngIf="password.errors  && (password.dirty || password.touched)">
         <p class="warning" *ngIf="password?.errors.required">* Password is required</p>
       </div>
     </div>
-    <input class="fadeIn fourth" (click)="passwordd.value=''; username.value=''" (click)="postProfile()"  [disabled]="form.invalid" [class.disabled]="form.invalid" type="submit" value="Log in">
+    <input class="fadeIn fourth" (click)="passwordd.value=''; username.value=''" (click)="postProfile()" [disabled]="form.invalid" [class.disabled]="form.invalid" type="submit" value="Log in">
+    <button class="btn btn-primary loader" disabled> <span class="spinner-border spinner-border-sm"></span> Loading..</button>
   </form>
 </div>
 

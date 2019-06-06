@@ -18,6 +18,90 @@ $desktop: 767px;
     }
 }
 
+
+// configuration (modal)
+
+.modal-dialog {
+  width: 100%;
+
+  @include desktop {
+    margin-top: 100px;
+  }
+
+  .modal-content {
+    width: 100%;
+
+    @include desktop {
+      width: 140%;
+    }
+
+    .modal-header {
+      background-color:lightblue;
+
+      @include desktop {
+        background-color:lightblue;
+      }
+    }
+  }
+}
+
+.tab-content {
+  position: relative;
+  height: 200px;
+
+  @include desktop {
+    height: 300px;
+  }
+
+  .form-group {
+    margin-top: 20px;
+
+    @include desktop {
+      margin-top: 50px;
+    }
+
+    label {
+      margin-left: 20px;
+    }
+
+    .form-control {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+
+      option {
+        width: 150px !important;
+      }
+    }
+  }
+
+  button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+
+}
+}
+
+#notify {
+
+  h3 {
+    padding: 30px 0px 20px 20px;
+  }
+    .custom-switch {
+      padding: 0px 0px 5px 50px;
+
+      @include desktop {
+        padding: 10px 0px 5px 50px;
+      }
+    }
+  }
+
+
+
+// notifications/alerts
+
 #notification {
   float: left;
   padding-left: 0px;
@@ -296,10 +380,34 @@ hr {
 
 
 // dragging & collapsing window
+.example-boundary {
+  height: 150%;
+  max-width: 100%;
+  margin-left: 0px;
+
+  @include desktop {
+    margin-left: 250px;
+    height: 90%;
+    max-width: 90%;
+  }
+
+  .collapsible:after {
+    content: "\2212";
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 20px;
+    float: right;
+  }
+
+  .active:after {
+    content: '\002B';
+  }
+}
 
 #card {
 width: 70%;
-margin-left: 250px;
+
+}
 
 .card-header {
   border:1px solid black;
@@ -317,23 +425,19 @@ margin-left: 250px;
   color: black;
 
   p {
-    padding: 50px 50px 20px 50px;
+    padding: 20px 20px 10px 20px;
     text-indent: 5%;
+    font-size: 12px;
+
+    @include desktop {
+      font-size: 14px;
+      padding: 50px 50px 20px 50px;
+    }
   }
 
 }
 
-.collapsible:after {
-  content: "\2212";
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  font-size: 20px;
-  float: right;
-}
 
-.active:after {
-  content: '\002B';
-}
-}
+
 
 

@@ -1,5 +1,11 @@
+$desktop: 767px;
 
-/* BASIC */
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
 
 html {
   background-color: #56baed;
@@ -31,7 +37,7 @@ h2 {
 }
 
 
-/* STRUCTURE */
+// login form
 
 .wrapper {
   display: flex;
@@ -43,23 +49,41 @@ h2 {
   padding: 20px;
 }
 
+.loader {
+  position:absolute;
+  width: 200px;
+  height: 49px;
+  top: 55%;
+  left: 17%;
+  visibility: hidden;
+
+  @include desktop {
+    position:absolute;
+    width: 200px;
+    height: 49px;
+    top: 55%;
+    left: 28%;
+    visibility: hidden;
+  }
+}
+
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
-  background: #fff;
-  padding: 30px;
+  background: -moz-linear-gradient(top, #d9a7ff 0%, #cd71ff 9%, #cd71ff 26%, #e09dff 74%, #e09dff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d9a7ff 0%,#cd71ff 9%,#cd71ff 26%,#e09dff 74%,#e09dff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d9a7ff 0%,#cd71ff 9%,#cd71ff 26%,#e09dff 74%,#e09dff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   width: 90%;
   max-width: 450px;
   position: relative;
-  height: 300px;
-  padding: 0px;
+  height: 350px;
+  padding-top: 20px;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
 }
 
 
-/* FORM TYPOGRAPHY*/
 input[type=submit] {
   background-color: #56baed;
   border: none;
@@ -74,7 +98,7 @@ input[type=submit] {
   box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
-  margin: 5px 20px 40px 20px;
+  margin: 20px 20px 40px 20px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;

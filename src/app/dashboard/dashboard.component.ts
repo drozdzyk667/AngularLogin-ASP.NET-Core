@@ -12,10 +12,15 @@ import { Languages } from './languges';
 export class DashboardComponent implements OnInit {
 
   Languages: Languages[];
-  langSelected: string = 'en';
   public hide = true;
   date: Date;
-  compare: string;
+  arr = [];
+  arr2 = [];
+  nrSelect = 'English';
+  toggleBool: boolean=true;
+  isItemClicked1 = false;
+  isItemClicked2 = false;
+  isItemClicked3 = false;
 
   constructor() {
 
@@ -209,37 +214,32 @@ export class DashboardComponent implements OnInit {
     ];
 
 
-    for (let k = 0; k < this.Languages.length; k++){
+    //  comparing "wrong" letters of nativeNames and pushing their names to the new array
+    this.arr = [];
+    this.arr2 = [];
+    for (let k = 0; k < this.Languages.length; k++) {
       let native = this.Languages[k].nativeName;
       let patt1 = /[^A-Za-z]/;
       let compare = native.match(patt1);
-      if(compare){
-        console.log(native, k);
-        // console.log(native==compare, k)
+      if (compare) {
+        this.arr.push(this.Languages[k].name);  // array of disabled names
+      } else {
+        this.arr2.push(this.Languages[k].name); // array of enabled names
       }
-
     }
-    // let str = this.Languages[0].name;
-    // console.log(str);
-    //
 
 
+    // collapsing draggable window
     const coll = document.getElementsByClassName('collapsible');
     let i: number;
 
     for (i = 0; i < coll.length; i++) {
       coll[i].addEventListener('click', function () {
         this.classList.toggle('active');
-        // const content = this.nextElementSibling;
-        // if (content.style.maxHeight) {
-        //   content.style.maxHeight = null;
-        // } else {
-        //   content.style.maxHeight = content.scrollHeight + 'px';
-        // }
       });
     }
 
-
+    // random alerts display
     setInterval(() => {
       switch (Math.floor(Math.random() * 3)) {
         case 0:
@@ -267,7 +267,6 @@ export class DashboardComponent implements OnInit {
   }
 
   toggle() {
-    // CHANGE THE NAME OF THE BUTTON.
     if (this.hide) {
       (document.querySelector('#info') as HTMLElement).style.display = 'none';
       (document.querySelector('#warning') as HTMLElement).style.display = 'none';
@@ -275,6 +274,25 @@ export class DashboardComponent implements OnInit {
       this.date = new Date();
     }
   }
+
+//   changeEvent(event) {
+//     if (event.target.checked) {
+//         this.toggleBool = false;
+//     }
+//     else {
+//         this.toggleBool = true;
+//     }
+// }
+
+clickItem1(){
+  this.isItemClicked1 = !this.isItemClicked1;
+}
+clickItem2(){
+  this.isItemClicked2 = !this.isItemClicked2;
+}
+clickItem3(){
+  this.isItemClicked3 = !this.isItemClicked3;
+}
 
 }
 

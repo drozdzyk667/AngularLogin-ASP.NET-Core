@@ -18,11 +18,15 @@ export class LoginComponent implements OnInit {
       "password": ""
     };
   }
-  
+
   ngOnInit() {
   }
 
   postProfile() {
+    (document.querySelector('.fourth') as HTMLElement).style.visibility = 'hidden';
+    setTimeout(() => {  
+      (document.querySelector('.loader') as HTMLElement).style.visibility = 'visible';
+    }, 300);
     console.log(this.input)
     this.httpClient.post('http://localhost:5000/Login',
       this.input
@@ -30,14 +34,23 @@ export class LoginComponent implements OnInit {
       .subscribe(
         (data: any) => {
           console.log(data);
-          if(data=='400'){
+          if (data == '400') {
             alert('Wrong login or password, try again')
           }
-          if(data=='200'){
+          if (data == '200') {
             this.router.navigateByUrl('/dashboard');
           }
+          setTimeout(() => {      
+            (document.querySelector('.loader') as HTMLElement).style.visibility = 'hidden';
+            (document.querySelector('.fourth') as HTMLElement).style.visibility = 'visible';
+            // (<HTMLInputElement> document.querySelector('.fourth')).disabled = true;
+            
+            this.input.login = '';
+            this.input.password = '';
+          }, 500);
         }
       );
+
   }
 
 }
