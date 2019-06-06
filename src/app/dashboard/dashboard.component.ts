@@ -349,6 +349,7 @@ export class DashboardComponent implements OnInit {
   onItemClickMain(category: string) {
     console.log(`${category}`);
     (document.getElementById('txt') as HTMLElement).innerHTML = `${category}`;
+
   }
 
 }

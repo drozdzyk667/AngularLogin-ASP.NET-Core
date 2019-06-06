@@ -1,8 +1,11 @@
 <div class="wrapper  fadeInDown">
+
   <div class="alert alert-danger">
     <span><strong>Error!</strong> Wrong login or password input.</span>
   </div>
+
   <h2>Sign In</h2>
+
   <form id="formContent" #form="ngForm" novalidate>
     <div>
       <input class="fadeIn second" placeholder="Login" #login="ngModel" name="login" [(ngModel)]="input.login"
@@ -23,4 +26,5 @@
     <button class="btn btn-primary loader" disabled> <span class="spinner-border spinner-border-sm"></span>
       Loading..</button>
   </form>
+
 </div>
