@@ -7,10 +7,6 @@ $desktop: 767px;
 }
 
 
-html {
-  background-color: #56baed;
-}
-
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
@@ -37,6 +33,45 @@ h2 {
 }
 
 
+// login section
+.alert {
+  padding: 10px;
+  width: 90%;
+  text-align: center;
+  opacity: 0;
+
+  @include desktop {
+  width: 20%;
+  }
+}
+
+.alertError {
+  -webkit-animation-name: showError;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: showError;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes showError {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showError {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 // login form
 
 .wrapper {
@@ -47,7 +82,7 @@ h2 {
   width: 100%;
   min-height: 100%;
   padding: 20px;
-}
+
 
 .loader {
   position:absolute;
@@ -78,8 +113,8 @@ h2 {
   position: relative;
   height: 350px;
   padding-top: 20px;
-  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.4);
   text-align: center;
 }
 
@@ -107,7 +142,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover  {
-  background-color: #39ace7;
+  background-color: #56ed5e;
 }
 
 .disabled {
@@ -156,12 +191,11 @@ input[type=text]:focus, input[type=password]:focus {
 input[type=text]:placeholder, input[type=password]:placeholder{
   color: #cccccc;
 }
+}
 
 
+/* ANIMATIONS for login form */
 
-/* ANIMATIONS */
-
-/* Simple CSS3 Fade-in-down Animation */
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -197,7 +231,6 @@ input[type=text]:placeholder, input[type=password]:placeholder{
   }
 }
 
-/* Simple CSS3 Fade-in Animation */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -235,7 +268,6 @@ input[type=text]:placeholder, input[type=password]:placeholder{
   animation-delay: 1s;
 }
 
-/* Simple CSS3 Fade-in Animation */
 .underlineHover:after {
   display: block;
   left: 0;

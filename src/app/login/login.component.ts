@@ -35,10 +35,17 @@ export class LoginComponent implements OnInit {
         (data: any) => {
           console.log(data);
           if (data == '400') {
-            alert('Wrong login or password, try again')
+            (document.querySelector('.alert') as HTMLElement).classList.add('alertError');
+            // (document.querySelector('.alert') as HTMLElement).style.visibility = 'visible';
+            setTimeout(() => {
+              (document.querySelector('.alert') as HTMLElement).classList.remove('alertError');
+            // (document.querySelector('.alert') as HTMLElement).style.visibility = 'hidden';
+            }, 6000);
           }
           if (data == '200') {
             this.router.navigateByUrl('/dashboard');
+            (document.querySelector('.alert') as HTMLElement).classList.remove('alertError');
+            // (document.querySelector('.alert') as HTMLElement).style.visibility = 'hidden';
           }
           setTimeout(() => {
             (document.querySelector('.loader') as HTMLElement).style.visibility = 'hidden';
