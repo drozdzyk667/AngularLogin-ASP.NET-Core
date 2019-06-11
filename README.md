@@ -6,7 +6,7 @@
 
 ## Technologies
 * HTML 5
-* CSS 3
+* SCSS
 * Typescript
 * Angular
 * Bootstrap 4
