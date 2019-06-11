@@ -7,7 +7,6 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ConfigurationComponent } from './configuration/configuration.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
@@ -16,7 +15,6 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    ConfigurationComponent,
   ],
   imports: [
     BrowserModule,
