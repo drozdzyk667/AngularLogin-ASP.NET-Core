@@ -32,10 +32,11 @@ export class LoginComponent implements OnInit {
       .post("http://localhost:5000/Login", this.input)
       .subscribe((data: any) => {
         console.log(data);
-        if (data == "400") {
+        if (data === "400") {
           (document.querySelector(".alert") as HTMLElement).classList.add(
             "alertError"
           );
+
           // (document.querySelector('.alert') as HTMLElement).style.visibility = 'visible';
           setTimeout(() => {
             (document.querySelector(
@@ -44,6 +45,7 @@ export class LoginComponent implements OnInit {
             (document.querySelector(
               ".fourth"
             ) as HTMLElement).style.visibility = "visible";
+
             // (<HTMLInputElement> document.querySelector('.fourth')).disabled = true;
             this.input.login = "";
             this.input.password = "";
@@ -52,15 +54,17 @@ export class LoginComponent implements OnInit {
             (document.querySelector(".alert") as HTMLElement).classList.remove(
               "alertError"
             );
+
             // (document.querySelector('.alert') as HTMLElement).style.visibility = 'hidden';
           }, 6000);
         }
-        if (data == "200") {
+        if (data === "200") {
           (document.querySelector(".loader") as HTMLElement).style.visibility =
             "hidden";
           (document.querySelector(".alert") as HTMLElement).classList.remove(
             "alertError"
           );
+
           // (document.querySelector('.alert') as HTMLElement).style.visibility = 'hidden';
           setTimeout(() => {
             this.router.navigateByUrl("/dashboard");
