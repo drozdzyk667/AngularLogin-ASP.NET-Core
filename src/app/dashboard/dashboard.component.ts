@@ -359,6 +359,10 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  ReturnToLogin() {
+    window.history.go(-1);
+  }
+
 }
 
 
