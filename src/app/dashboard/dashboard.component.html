@@ -5,70 +5,85 @@
     <div id="info" class="alert alert-info fade show" *ngIf="hide">
       <button type="button" class="close" (click)="toggle()">&times;</button>
       <strong><i class="fa fa-exclamation-circle"></i>Info!</strong>
-      <span id="infoDate">{{date | date:'HH:mm:ss'}}</span>
-      <hr>
+      <span id="infoDate">{{ date | date: "HH:mm:ss" }}</span>
+      <hr />
       <i>Neutral information.</i>
     </div>
     <div id="warning" class="alert alert-warning fade show" *ngIf="hide">
       <button type="button" class="close" (click)="toggle()">&times;</button>
       <strong><i class="fa fa-bullhorn"></i>Warning!</strong>
-      <span id="warnDate">{{date | date:'HH:mm:ss'}}</span>
-      <hr>
+      <span id="warnDate">{{ date | date: "HH:mm:ss" }}</span>
+      <hr />
       <i>Might need attention.</i>
     </div>
     <div id="danger" class="alert alert-danger fade show" *ngIf="hide">
       <button type="button" class="close" (click)="toggle()">&times;</button>
       <strong><i class="fa fa-bolt"></i>Danger!</strong>
-      <span id="dangerDate">{{date | date:'HH:mm:ss'}}</span>
-      <hr>
+      <span id="dangerDate">{{ date | date: "HH:mm:ss" }}</span>
+      <hr />
       <i>Dangerous action.</i>
     </div>
   </div>
 
   <a href="#" (click)="ReturnToLogin()">Logout</a>
-  <a href="/configuration" data-toggle="modal" data-target="#myModal">Configuration</a>
+  <a href="/configuration" data-toggle="modal" data-target="#myModal"
+    >Configuration</a
+  >
 </div>
-
 
 <!-- Configuration/modal window -->
 
 <div class="modal fade" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
-
       <!-- Modal Header -->
       <div class="modal-header">
         <i class="fa fa-2x fa-wrench fa-lg"></i>
         <h4 class="modal-title">Configuration</h4>
-        <button type="button" class="close" data-dismiss="modal"
-          style="font-size:35px; padding-right:20px; outline: none;">&times;</button>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          style="font-size:35px; padding-right:20px; outline: none;"
+        >
+          &times;
+        </button>
       </div>
 
       <!-- Modal body -->
       <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-          <a class="nav-link" href="#languages" role="tab" data-toggle="tab">Language selection</a>
+          <a class="nav-link" href="#languages" role="tab" data-toggle="tab"
+            >Language selection</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#notify" role="tab" data-toggle="tab">Notification types select</a>
+          <a class="nav-link" href="#notify" role="tab" data-toggle="tab"
+            >Notification types select</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#email" role="tab" data-toggle="tab">Email input</a>
+          <a class="nav-link" href="#email" role="tab" data-toggle="tab"
+            >Email input</a
+          >
         </li>
       </ul>
 
       <!-- Tabs -->
       <div class="tab-content">
-
         <div role="tabpanel" class="tab-pane fade in active" id="languages">
           <div class="form-group">
             <label for="sel1">Select list (select one):</label>
-            <select class="form-control" id="sel1" [(ngModel)]='nrSelect'>
-              <option *ngFor=" let langActive of arr2" style="font-weight: 500;">
-                {{langActive}}
+            <select class="form-control" id="sel1" [(ngModel)]="nrSelect">
+              <option *ngFor="let langActive of arr2" style="font-weight: 500;">
+                {{ langActive }}
               </option>
-              <option *ngFor=" let langNotActive of arr" [disabled]=true style="font-size:14px;">
-                {{langNotActive}}
+              <option
+                *ngFor="let langNotActive of arr"
+                [disabled]="true"
+                style="font-size:14px;"
+              >
+                {{ langNotActive }}
               </option>
             </select>
           </div>
@@ -77,34 +92,75 @@
 
         <div role="tabpanel" class="tab-pane fade" id="notify">
           <label for="sel2">
-            <h3>Alerts Selection</h3> <p style="padding-left:20px;">(turn on switch and wait 5-10s)</p>
+            <h3>Alerts Selection</h3>
+            <p style="padding-left:20px;">(turn on switch and wait 5-10s)</p>
           </label>
           <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="switch1" name="example" (change)="clickItem1();">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="switch1"
+              name="example"
+              (change)="clickItem1()"
+            />
             <label class="custom-control-label" for="switch1">Info alert</label>
           </div>
           <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="switch2" name="example" (change)="clickItem2();">
-            <label class="custom-control-label" for="switch2">Warning alert</label>
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="switch2"
+              name="example"
+              (change)="clickItem2()"
+            />
+            <label class="custom-control-label" for="switch2"
+              >Warning alert</label
+            >
           </div>
           <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="switch3" name="example" (change)="clickItem3();">
-            <label class="custom-control-label" for="switch3">Danger alert</label>
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="switch3"
+              name="example"
+              (change)="clickItem3()"
+            />
+            <label class="custom-control-label" for="switch3"
+              >Danger alert</label
+            >
           </div>
-          <button class="btn btn-warning"
-            [disabled]="!isItemClicked1 && !isItemClicked2 && !isItemClicked3">Save</button>
+          <button
+            class="btn btn-warning"
+            [disabled]="!isItemClicked1 && !isItemClicked2 && !isItemClicked3"
+          >
+            Save
+          </button>
         </div>
 
         <div role="tabpanel" class="tab-pane fade" id="email">
           <form id="myform" action="#" method="get" #form="ngForm">
             <p>
-              <label id="emailField" for="email">Email: (real-time validation) </label>
-              <br>
-              <input class="form-control" name="email" id="email" value="" required="required" aria-required="true"
+              <label id="emailField" for="email"
+                >Email: (real-time validation)
+              </label>
+              <br />
+              <input
+                class="form-control"
+                name="email"
+                id="email"
+                value=""
+                required="required"
+                aria-required="true"
                 pattern="^(([-\w\d]+)(\.[-\w\d]+)*@([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2})$"
-                title="Your email address" type="email" spellcheck="false" size="30" />
-              <br>
-              <i id="emailMsg" style="color:red; visibility: hidden;">* Wrong email !</i>
+                title="Your email address"
+                type="email"
+                spellcheck="false"
+                size="30"
+              />
+              <br />
+              <i id="emailMsg" style="color:red; visibility: hidden;"
+                >* Wrong email !</i
+              >
             </p>
           </form>
           <button class="btn btn-primary" id="saveEmail">Save</button>
@@ -113,54 +169,90 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Close
+        </button>
       </div>
-
     </div>
   </div>
 </div>
-
 
 <!-- left sticky menu -->
 
 <div class="nav-side-menu">
   <div class="brand">Brand</div>
-  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  <i
+    class="fa fa-bars fa-2x toggle-btn"
+    data-toggle="collapse"
+    data-target="#menu-content"
+  ></i>
   <div class="menu-list">
-
     <ul id="menu-content" class="menu-content collapse out">
-
-      <li (click)="onItemClickMain('Dashboard')"><i class="fa fa-dashboard fa-lg"></i> Dashboard </li>
-      <li (click)="onItemClickMain('Statistics')" data-toggle="collapse" data-target="#statistics" class="collapsed">
-        <i class="fa fa-area-chart fa-lg"></i> Statistics <span class="arrow"></span>
+      <li (click)="onItemClickMain('Dashboard')">
+        <i class="fa fa-dashboard fa-lg"></i> Dashboard
+      </li>
+      <li
+        (click)="onItemClickMain('Statistics')"
+        data-toggle="collapse"
+        data-target="#statistics"
+        class="collapsed"
+      >
+        <i class="fa fa-area-chart fa-lg"></i> Statistics
+        <span class="arrow"></span>
       </li>
 
       <ul class="sub-menu collapse" id="statistics">
-        <li *ngFor=" let item of listItems; let i = index" (click)="onItemClick('Statistics',i)">{{ item }}</li>
+        <li
+          *ngFor="let item of listItems; let i = index"
+          (click)="onItemClick('Statistics', i)"
+        >
+          {{ item }}
+        </li>
       </ul>
 
-      <li (click)="onItemClickMain('Reports')" data-toggle="collapse" data-target="#reports" class="collapsed">
-        <i class="fa fa-file-text fa-lg"></i> Reports <span class="arrow"></span>
+      <li
+        (click)="onItemClickMain('Reports')"
+        data-toggle="collapse"
+        data-target="#reports"
+        class="collapsed"
+      >
+        <i class="fa fa-file-text fa-lg"></i> Reports
+        <span class="arrow"></span>
       </li>
 
       <ul class="sub-menu collapse" id="reports">
-        <li *ngFor=" let item of listItems; let i = index" (click)="onItemClick('Reports',i)">{{ item }}</li>
+        <li
+          *ngFor="let item of listItems; let i = index"
+          (click)="onItemClick('Reports', i)"
+        >
+          {{ item }}
+        </li>
       </ul>
 
-      <li (click)="onItemClickMain('Configurations')"><i class="fa fa-wrench fa-lg"></i> Configurations </li>
+      <li (click)="onItemClickMain('Configurations')">
+        <i class="fa fa-wrench fa-lg"></i> Configurations
+      </li>
 
-      <li (click)="onItemClickMain('Overview')" data-toggle="collapse" data-target="#overview" class="collapsed">
+      <li
+        (click)="onItemClickMain('Overview')"
+        data-toggle="collapse"
+        data-target="#overview"
+        class="collapsed"
+      >
         <i class="fa fa-book fa-lg"></i> Overview <span class="arrow"></span>
       </li>
 
       <ul class="sub-menu collapse" id="overview">
-        <li *ngFor=" let item of listItems; let i = index" (click)="onItemClick('Overview',i)">{{ item }}</li>
+        <li
+          *ngFor="let item of listItems; let i = index"
+          (click)="onItemClick('Overview', i)"
+        >
+          {{ item }}
+        </li>
       </ul>
-
     </ul>
   </div>
 </div>
-
 
 <!-- main content -->
 <p id="txt"></p>
@@ -173,16 +265,20 @@
     </div>
 
     <div id="collapse1" class="card-body collapse show">
-      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Vestibulum lorem quam, scelerisque sit amet feugiat at, tristique eget elit.
-        Fusce sagittis urna nec sodales consequat.
-        Pellentesque diam dolor, iaculis feugiat lobortis commodo, pulvinar quis mauris.
-        Sed magna nunc, eleifend vel luctus ut, bibendum sit amet massa.
-        Suspendisse a mauris facilisis, scelerisque massa nec, luctus risus.
-        Duis enim elit, porta a facilisis vehicula, malesuada in ante.
-        Nulla rutrum vel felis quis consequat. </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+        lorem quam, scelerisque sit amet feugiat at, tristique eget elit. Fusce
+        sagittis urna nec sodales consequat. Pellentesque diam dolor, iaculis
+        feugiat lobortis commodo, pulvinar quis mauris. Sed magna nunc, eleifend
+        vel luctus ut, bibendum sit amet massa. Suspendisse a mauris facilisis,
+        scelerisque massa nec, luctus risus. Duis enim elit, porta a facilisis
+        vehicula, malesuada in ante. Nulla rutrum vel felis quis consequat.
+      </p>
 
-      <div class="table-responsive" style="margin: 30px 0px 40px 40px; width: 90%;">
+      <div
+        class="table-responsive"
+        style="margin: 30px 0px 40px 40px; width: 90%;"
+      >
         <table class="table">
           <thead>
             <tr>
@@ -223,6 +319,5 @@
         </table>
       </div>
     </div>
-
   </div>
 </div>
