@@ -1,6 +1,7 @@
 # Angular validation Login-ASP.NET-Core
 > Validated by backend on: http://localhost:5000/Login - if you are not able to do it you can just type http://localhost:4200/dashboard (or if you are using github pages to view the site type: https://drozdzyk667.github.io/AngularLogin-ASP.NET-Core/dashboard) and you will move to the next section.
 
+##### caution - on github pages may occur some bugs
 ## Screenshots
 ![Main screen](./src/assets/images/rwd.png)
 
